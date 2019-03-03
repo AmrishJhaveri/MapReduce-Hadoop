@@ -101,7 +101,8 @@ Output Graph:
 ----------
 - [Scala](https://www.scala-lang.org/) - Scala combines object-oriented and functional programming in one concise, high-level language
 - [SBT](https://www.scala-sbt.org/) - sbt is a build tool for Scala & Java
-
+- [Cloudera](https://www.cloudera.com/) - Cloudera QuickStart VMs (single-node cluster)
+- [Hadoop](https://hadoop.apache.org/) - framework that allows for the distributed processing of large data sets
 
 ## Authors
 
