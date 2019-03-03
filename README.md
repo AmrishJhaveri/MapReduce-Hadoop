@@ -94,7 +94,7 @@ Sample Output:
 
 Output Graph:
 
-![](https://bitbucket.org/ajhave5/amrishashvinkumar_jhaveri_hw2/src/master/logs/authors_mapping3.png)
+![](https://bitbucket.org/ajhave5/amrishashvinkumar_jhaveri_hw2/raw/master/logs/authors_mapping3.png)
 
 ## Built With
 
