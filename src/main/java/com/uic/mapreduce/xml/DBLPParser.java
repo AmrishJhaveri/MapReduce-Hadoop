@@ -18,12 +18,13 @@ public class DBLPParser {
 
         try {
 
+            //Increase the expansion limit since DBLP has more than 64000 entities.
             System.setProperty("entityExpansionLimit", "10000000");
 
-            //Read UIC authors list
+            //Read UIC authors list and store in a HashSet
+            //2nd parameter of the command line argument
             Scanner file = new Scanner(new File(args[1]));
             Set<String> uicAuthors = new HashSet<>();
-            // For each word in the input
             while (file.hasNextLine()) {
                 uicAuthors.add(file.nextLine().trim());
             }
@@ -32,8 +33,10 @@ public class DBLPParser {
             SAXParserFactory factory = SAXParserFactory.newInstance();
             SAXParser saxParser = factory.newSAXParser();
 
+            //Create instance of the Handler and also provide the UIC authors set to it.
             DBLPHandler handle = new DBLPHandler(uicAuthors);
 
+            //DBLP file path provided as a command line argument.
             saxParser.parse(args[0], handle);
 
             List<List<String>> result = handle.getListOfAuthorsList();
@@ -50,7 +53,7 @@ public class DBLPParser {
                 logger.info(str.toString());
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("XML Parser exception", e);
         }
     }
 }
